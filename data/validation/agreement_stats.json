@@ -1,0 +1,53 @@
+{
+  "n_subjects": 100,
+  "reference_classifiers": [
+    "google/gemini-3-flash-preview",
+    "anthropic/claude-haiku-4.5"
+  ],
+  "validator_classifiers": [
+    "z-ai/a1-5",
+    "moonshotai/a2-k2.5"
+  ],
+  "cohen_kappa": {
+    "gemini_vs_a1": 0.74,
+    "gemini_vs_a2": 0.56,
+    "haiku_vs_a1": 0.7,
+    "haiku_vs_a2": 0.56,
+    "a1_vs_a2": 0.7516
+  },
+  "fleiss_kappa": {
+    "gemini_a1_a2": 0.6757,
+    "haiku_a1_a2": 0.6616
+  },
+  "raw_agreement_rate": {
+    "gemini_vs_a1": 0.87,
+    "gemini_vs_a2": 0.78,
+    "haiku_vs_a1": 0.85,
+    "haiku_vs_a2": 0.78,
+    "a1_vs_a2": 0.89
+  },
+  "disagreement_directions": {
+    "a1_BROKEN_when_gemini_ROBUST": 0,
+    "a1_ROBUST_when_gemini_BROKEN": 13,
+    "a2_BROKEN_when_gemini_ROBUST": 0,
+    "a2_ROBUST_when_gemini_BROKEN": 22,
+    "a1_BROKEN_when_haiku_ROBUST": 1,
+    "a1_ROBUST_when_haiku_BROKEN": 14,
+    "a2_BROKEN_when_haiku_ROBUST": 0,
+    "a2_ROBUST_when_haiku_BROKEN": 22,
+    "a2_BROKEN_when_a1_ROBUST": 1,
+    "a2_ROBUST_when_a1_BROKEN": 10
+  },
+  "gemini_vs_majority_vote": {
+    "precision": 0.76,
+    "recall": 1.0,
+    "f1": 0.8636,
+    "note": "gemini as predicted, majority(gemini+a1+a2) as ground truth, pos_label=BROKEN"
+  },
+  "haiku_vs_majority_vote": {
+    "precision": 0.74,
+    "recall": 1.0,
+    "f1": 0.8506,
+    "note": "haiku as predicted, majority(haiku+a1+a2) as ground truth, pos_label=BROKEN"
+  }
+}
